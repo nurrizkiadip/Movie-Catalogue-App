@@ -1,0 +1,110 @@
+Scenario of Instumental Testing View Model
+
+1. Simulasi Memuat Semua Movies secara Success
+- Memuat data movie dari file json
+- Membuka fragment tab "Movies"
+- Memastikan daftar movies tampil dengan baik
+- Memastikan jumlah data movies yang ditampilkan benar dengan melakukan gulir data ke urutan terakhir
+
+2. Simulasi Memuat Semua Tv Shows secara Success
+- Memuat data tv show dari file json
+- Membuka fragment tab "TV Shows"
+- Memastikan daftar Tv Shows tampil dengan baik
+- Memastikan jumlah data Tv Show yang ditampilkan benar dengan melakukan gulit data ke urutan terakhir
+
+3. Simulasi Memuat Semua Movies secara Kosong
+- Memuat data movie dari file json
+- Membuka fragment tab "Movies"
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+4. Simulasi Memuat Semua Tv Shows secara Kosong
+- Memuat data tv show dari file json
+- Membuka fragment tab "TV Shows"
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+5. Simulasi Memuat Semua Movies dengan Kesalahan
+- Melakukan error request
+- Membuka fragment tab "Movies"
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+6. Simulasi Memuat Semua Tv Shows dengan Kesalahan
+- Melakukan error request
+- Membuka fragment tab "TV Shows"
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+
+7. Simulasi Memuat Detail Movie dengan Sukses
+- Melakukan request data semua movie dari file json
+- Membuka fragment tab "Movies"
+- Memastikan daftar movies berhasil di tampilkan
+- Melakukan request detail movie dari file json
+- Melakukan klik pada movie pertama pada rv_movies
+- Memastikan element TextView ber-ID tv_id_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_title_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_language_detail film tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_release_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_popularity_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_overview_detail tampil dan sesuai yang diharapkan pada Data Lokal
+
+8. Simulasi Memuat Detail Movie dengan Sukses namun kosong
+- Memuat semua data movie dari file json
+- Membuka fragment tab "Movies"
+- Memastikan daftar movies berhasil di tampilkan
+- Melakukan request detail movie dari file json
+- Melakukan klik pada movie pertama pada rv_movies
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+9. Simulasi Memuat Detail Movie dengan Kesalahan
+- Memuat semua data movie dari file json
+- Membuka fragment tab "Movies"
+- Memastikan daftar movies berhasil di tampilkan
+- Melakukan error request
+- Melakukan klik pada movie pertama pada rv_movies
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+10. Simulasi Memuat Detail Tv Shows dengan Sukses
+- Melakukan request data semua tv show dari file json
+- Membuka fragment tab "TV Shows"
+- Memastikan daftar Tv Show berhasil di tampilkan
+- Melakukan request detail tv show dari file json
+- Melakukan klik pada Tv Show pertama pada rv_tvshow
+- Memastikan element TextView ber-ID tv_id_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_title_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_language_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_release_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_popularity_detail tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_number_of_eps tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_number_of_seasons tampil dan sesuai yang diharapkan pada Data Lokal
+- Memastikan element TextView ber-ID tv_overview_detail tampil dan sesuai yang diharapkan pada Data Lokal
+
+11. Simulasi Memuat Detail Tv Show dengan Sukses namun kosong
+- Memuat semua data tv show dari file json
+- Membuka fragment tab "Tv Shows"
+- Memastikan daftar tv shows berhasil di tampilkan
+- Melakukan request detail tv show dari file json
+- Melakukan klik pada Tv Show pertama pada rv_tvshow
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan
+
+12. Simulasi Memuat Detail Movie dengan Kesalahan
+- Memuat semua data tv show dari file json
+- Membuka fragment tab "Tv Shows"
+- Memastikan daftar tv shows berhasil di tampilkan
+- Melakukan error request
+- Melakukan klik pada Tv Show pertama pada rv_tvshow
+- Memastikan gambar dengan id "img_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" tampil dengan baik
+- Memastikan teks dengan id "tv_no_data" memiliki nilai yang sama sesuai harapan

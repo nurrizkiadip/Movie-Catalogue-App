@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Katalog Film</string>
+    <string name="hello_blank_fragment">Fragment Kosong Halo</string>
+    <string name="movies_catalogue_poster">Poster Kalatog Film</string>
+    <string name="release_date_movie">Tanggal Rilis</string>
+    <string name="title_movies">Judul Film</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">Pertunjukan TV</string>
+    <string name="poster_movies">Poster Film</string>
+    <string name="title_detail">Judul</string>
+    <string name="release_date_detail">Tanggal Rilis</string>
+    <string name="id_number_detail">Nomor Id</string>
+    <string name="dummy_number">0</string>
+    <string name="popularity_detail">Kepopuleran</string>
+    <string name="original_language_detail">Bahasa Asli</string>
+    <string name="dummy_language_default">Bahasa Asal</string>
+    <string name="title_tvshow">Judul TV Show</string>
+    <string name="tvshows_poster">Poster TV Show</string>
+    <string name="number_of_episodes">Jumlah Episod</string>
+    <string name="number_of_seasons">Jumlah Sesi</string>
+    <string name="movie_catalogue_app">Aplikasi Katalog Film</string>
+    <string name="overview_detail">Ikhtisar</string>
+    <string name="dummy_overview_default">Ikhtisar asal</string>
+    <string name="no_data">Tidak ada data</string>
+</resources>

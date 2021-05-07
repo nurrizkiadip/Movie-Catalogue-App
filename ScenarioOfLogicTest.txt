@@ -1,0 +1,52 @@
+Scenario of Logic Testing View Model
+
+1. MovieCatalogueViewModelTest
+- Mengambil semua data movie yang di request di class repository
+- Memastikan data movies yang akan ditampilkan tidak null
+- Memastikan data movies yang akan ditampilkan memiliki jumlah yang diharapkan
+
+2. TvShowsViewModelTest
+- Mengambil semua data tv show yang di request di class repository
+- Memastikan data tv shows yang akan ditampilkan tidak null
+- Memastikan data tv shows yang akan ditampilkan memiliki jumlah yang diharapkan
+
+3. DetailViewModelTest
+- MovieDetail
+  > Mengambil semua data movie yang di request di class repository
+  > Memastikan rincian data semua movie yang di request pada movie pertama tidak null
+  > Memastikan nilai ID pada movie pertama sesuai yang diharapkan
+  > Memastikan nilai poster path pada movie pertama sesuai yang diharapkan
+  > Memastikan nilai judul pada movie pertama sesuai yang diharapkan
+  > Memastikan nilai overview pada movie pertama sesuai yang diharapkan
+  > Memastikan nilai popularitas pada movie pertama sesuai yang diharapkan
+  > Memastikan nilai tanggal rilis pada movie pertama sesuai yang diharapkan
+  > Memastikan nilai bahasa asli pada movie pertama sesuai yang diharapkan
+- TvShowDetail
+  > Mengambil semua data tv show yang di request di class repository
+  > Memastikan rincian data semua tv show yang di request pada tv show pertama tidak null
+  > Memastikan nilai ID pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai poster path pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai judul pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai overview pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai popularitas pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai tanggal peluncuran pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai jumlah episod pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai jumlah musim pada tv show pertama sesuai yang diharapkan
+  > Memastikan nilai bahasa asli pada tv show pertama sesuai yang diharapkan
+
+4. RepositoryTest
+- getAllMovies()
+  > Memastikan hasil data seluruh movie yang di request tidak null
+  > Memastikan jumlah data request sesuai yang diharapkan
+
+- getAllTvShow()
+  > Memastikan hasil data seluruh tv shows yang di request tidak null
+  > Memastikan jumlah data request sesuai yang diharapkan
+
+- getMovieById()
+  > Memastikan hasil data movie berdasarkan id yang di request tidak null
+  > Memastikan id movie yang di request sesuai yang diharapkan
+
+- getTvById
+  > Memastikan hasil data tv show berdasarkan id yang di request tidak null
+  > Memastikan id tv show yang di request sesuai yang diharapkan

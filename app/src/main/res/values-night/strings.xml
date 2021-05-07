@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movies_catalogue_poster">Movies Catalogue Poster</string>
+    <string name="release_date_movie">Release Date</string>
+    <string name="title_movies">Title Movies</string>
+    <string name="tab_text_2">TV Shows</string>
+    <string name="poster_movies">Poster Movies</string>
+    <string name="release_date_detail">Release Date</string>
+    <string name="title_tvshow">Title TV Show</string>
+    <string name="tvshows_poster">Poster TvShow</string>
+    <string name="movie_catalogue_app">Movie Catalogue App</string>
+    <string name="no_data">No Data</string>
+</resources>
