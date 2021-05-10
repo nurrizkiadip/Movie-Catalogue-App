@@ -9,11 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.EmptyResponse
 import com.nurrizkiadip_a1201541.moviecatalogue.databinding.FragmentMoviesCatalogueBinding
-import com.nurrizkiadip_a1201541.moviecatalogue.ui.home.viewmodel.ViewModelFactory
+import com.nurrizkiadip_a1201541.moviecatalogue.viewmodel.ViewModelFactory
 import com.nurrizkiadip_a1201541.moviecatalogue.utils.gone
 import com.nurrizkiadip_a1201541.moviecatalogue.utils.visible
+import com.nurrizkiadip_a1201541.moviecatalogue.vo.ErrorResource
+import com.nurrizkiadip_a1201541.moviecatalogue.vo.LoadingResource
+import com.nurrizkiadip_a1201541.moviecatalogue.vo.Status
+import com.nurrizkiadip_a1201541.moviecatalogue.vo.SuccessResource
 import java.util.ArrayList
 
 class MoviesCatalogueFragment : Fragment(){
@@ -26,6 +32,7 @@ class MoviesCatalogueFragment : Fragment(){
     
     companion object{
         val TAG: String = MoviesCatalogueFragment::class.java.simpleName
+        const val MOVIE_FAV = "movie_fav"
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +41,7 @@ class MoviesCatalogueFragment : Fragment(){
         _binding = FragmentMoviesCatalogueBinding.inflate(inflater, container, false)
 
         adapter = MoviesCatalogueAdapter()
-        val factory = ViewModelFactory.getInstance(this.application as Application)
+        val factory = ViewModelFactory.getInstance(requireActivity(), this.application as Application, lifecycleScope)
         viewModel = ViewModelProvider(requireActivity(), factory)[MoviesCatalogueViewModel::class.java]
 
         return binding.root
@@ -56,32 +63,36 @@ class MoviesCatalogueFragment : Fragment(){
         binding.rvMovies.adapter = adapter
 
         viewModel.getMoviesData().observe(viewLifecycleOwner){
-            if(it != null){
-                when(it){
-                    is SuccessMovies -> {
-                        Toast.makeText(requireActivity(), "Success Collecting Data", Toast.LENGTH_SHORT).show()
-                        Log.d(TAG, "populateMovies: isi movie list ${it.listMovies[0]}")
+            if(it != null) when(it.status){
+                    Status.SUCCESS -> {
+                        if(it.data != null){
+                            Toast.makeText(requireActivity(), "Success Collecting Data", Toast.LENGTH_SHORT).show()
+                            Log.d(TAG, "populateMovies: isi movie list ${it.data[0]}")
 
+                            binding.tvNoData.gone()
+                            binding.imgNoData.gone()
+                            adapter.setMovies(ArrayList(it.data))
+                        } else {
+                            Toast.makeText(requireActivity(), "No Data Collected", Toast.LENGTH_SHORT).show()
+                            binding.tvNoData.text = it.message
+                            binding.imgNoData.visible()
+                            binding.tvNoData.visible()
+                        }
+                    }
+                    Status.LOADING -> {
+                        binding.progressBar.visible()
                         binding.tvNoData.gone()
                         binding.imgNoData.gone()
-                        adapter.setMovies(ArrayList(it.listMovies))
                     }
-                    is EmptyMovies ->{
-                        Toast.makeText(requireActivity(), "No Data Collected", Toast.LENGTH_SHORT).show()
-                        binding.tvNoData.text = it.message
-                        binding.imgNoData.visible()
-                        binding.tvNoData.visible()
-                    }
-                    is ErrorMovies -> {
+                    Status.ERROR -> {
                         Toast.makeText(requireActivity(), "Error collecting data", Toast.LENGTH_SHORT).show()
                         binding.tvNoData.text = it.message
                         binding.imgNoData.visible()
                         binding.tvNoData.visible()
                     }
-                    Movies -> adapter.setMovies(arrayListOf())
                 }
                 binding.progressBar.gone()
-            }
+
         }
     }
 

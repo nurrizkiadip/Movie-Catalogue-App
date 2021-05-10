@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import com.nurrizkiadip_a1201541.moviecatalogue.data.source.Repository
+import com.nurrizkiadip_a1201541.moviecatalogue.data.Repository
 import com.nurrizkiadip_a1201541.moviecatalogue.utils.MoviesData
 
 @RunWith(MockitoJUnitRunner::class)

@@ -2,7 +2,7 @@ package com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.network
 
 import com.nurrizkiadip_a1201541.moviecatalogue.BuildConfig.API_KEY
 import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.response.MovieResponse
-import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.response.MovieResultsItem
+import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.response.MovieDetailResponse
 import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.response.TvDetailResponse
 import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.response.TvShowResponse
 import retrofit2.Call
@@ -28,7 +28,7 @@ interface ApiService {
     fun getMovieById(
         @Path("id") id: Int,
         @Query("api_key") apiKey: String = API_KEY,
-    ): Call<MovieResultsItem>
+    ): Call<MovieDetailResponse>
 
     @GET("3/tv/{id}")
     fun getTvById(

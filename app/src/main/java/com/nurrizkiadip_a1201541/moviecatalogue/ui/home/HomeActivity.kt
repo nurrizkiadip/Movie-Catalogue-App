@@ -2,22 +2,22 @@ package com.nurrizkiadip_a1201541.moviecatalogue.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.StringRes
-import com.google.android.material.tabs.TabLayoutMediator
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.nurrizkiadip_a1201541.moviecatalogue.R
 import com.nurrizkiadip_a1201541.moviecatalogue.databinding.ActivityHomeBinding
+import com.nurrizkiadip_a1201541.moviecatalogue.ui.home.home.HomeViewModel
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var sectionPageAdapter: SectionPageAdapter
+    private lateinit var viewModel: HomeViewModel
 
     companion object{
-        @StringRes
-        private val TAB_TITLES = intArrayOf(
-            R.string.tab_text_1,
-            R.string.tab_text_2
-        )
+        const val IS_MOVIE_FAV = "is_movie_fav"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,16 +25,21 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpTabLayout()
-    }
-
-    private fun setUpTabLayout() {
-        sectionPageAdapter = SectionPageAdapter(this@HomeActivity.application,this@HomeActivity)
-        binding.viewPager2.adapter = sectionPageAdapter
-
-        val tabLayoutMediator = TabLayoutMediator(binding.tabs, binding.viewPager2){tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
+        supportActionBar?.apply {
+            elevation = 0f
         }
-        tabLayoutMediator.attach()
+
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
+        viewModel.setApplication(application)
+
+        val navController = findNavController(R.id.main_nav)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.navigation_home, R.id.navigation_favorite
+        ).build()
+        this.setupActionBarWithNavController(navController, appBarConfiguration)
+        binding.bottomNavigationView.setupWithNavController(navController)
     }
 }

@@ -2,7 +2,6 @@ package com.nurrizkiadip_a1201541.moviecatalogue.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.nurrizkiadip_a1201541.moviecatalogue.data.source.MovieDataSource
 import com.nurrizkiadip_a1201541.moviecatalogue.data.source.remote.RemoteDataSource
 import com.nurrizkiadip_a1201541.moviecatalogue.ui.movies.MoviesViewModelState
 import com.nurrizkiadip_a1201541.moviecatalogue.ui.tvshows.TvsViewModelState

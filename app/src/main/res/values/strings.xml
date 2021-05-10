@@ -23,4 +23,9 @@
     <string name="number_of_seasons">Number of Seasons</string>
     <string name="movie_catalogue_app">Movie Catalogue App</string>
     <string name="no_data">No Data</string>
+    <string name="home_buttom_nav">Home</string>
+    <string name="favorite_buttom_nav">Favorite</string>
+    <string name="add_to_favorite">Add to Favorite</string>
+    <string name="message_undo">Undo deleting movie favorite?</string>
+    <string name="message_ok">OK</string>
 </resources>

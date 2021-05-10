@@ -11,13 +11,13 @@ data class MovieResponse(
 	val totalPages: Int,
 
 	@field:SerializedName("results")
-	val results: List<MovieResultsItem>,
+	val results: List<MovieDetailResponse>,
 
 	@field:SerializedName("total_results")
 	val totalResults: Int
 )
 
-data class MovieResultsItem(
+data class MovieDetailResponse(
 
 	@field:SerializedName("overview")
 	val overview: String,

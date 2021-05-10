@@ -3,7 +3,7 @@ package com.nurrizkiadip_a1201541.moviecatalogue.ui.tvshows
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.nurrizkiadip_a1201541.moviecatalogue.data.source.Repository
+import com.nurrizkiadip_a1201541.moviecatalogue.data.Repository
 import com.nurrizkiadip_a1201541.moviecatalogue.utils.MoviesData
 import org.junit.Before
 import org.junit.Test

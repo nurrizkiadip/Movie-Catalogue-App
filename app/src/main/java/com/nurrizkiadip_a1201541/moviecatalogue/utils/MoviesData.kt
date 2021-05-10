@@ -1,10 +1,19 @@
 package com.nurrizkiadip_a1201541.moviecatalogue.utils
 
+import androidx.annotation.StringRes
 import com.nurrizkiadip_a1201541.moviecatalogue.BuildConfig.BASE_URL_MOVIEDB_IMAGE
-import com.nurrizkiadip_a1201541.moviecatalogue.data.MovieEntity
-import com.nurrizkiadip_a1201541.moviecatalogue.data.TvShowEntity
+import com.nurrizkiadip_a1201541.moviecatalogue.R
+import com.nurrizkiadip_a1201541.moviecatalogue.data.source.local.entity.MovieEntity
+import com.nurrizkiadip_a1201541.moviecatalogue.data.source.local.entity.TvShowEntity
 
 object MoviesData {
+
+    @StringRes
+    val TAB_TITLES = intArrayOf(
+        R.string.tab_text_1,
+        R.string.tab_text_2
+    )
+
     fun generateMovieData(): ArrayList<MovieEntity> {
         return ArrayList<MovieEntity>().apply{
             /*1*/

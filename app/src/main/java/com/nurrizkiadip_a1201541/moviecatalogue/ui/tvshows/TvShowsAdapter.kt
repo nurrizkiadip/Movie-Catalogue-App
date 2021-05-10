@@ -9,7 +9,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.nurrizkiadip_a1201541.moviecatalogue.BuildConfig.BASE_URL_MOVIEDB_IMAGE
 import com.nurrizkiadip_a1201541.moviecatalogue.R
-import com.nurrizkiadip_a1201541.moviecatalogue.data.TvShowEntity
+import com.nurrizkiadip_a1201541.moviecatalogue.data.source.local.entity.TvShowEntity
 import com.nurrizkiadip_a1201541.moviecatalogue.databinding.ItemTvShowsBinding
 import com.nurrizkiadip_a1201541.moviecatalogue.ui.detail.DetailActivity
 import com.nurrizkiadip_a1201541.moviecatalogue.ui.detail.DetailActivity.Companion.TV_TYPE
